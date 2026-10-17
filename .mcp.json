@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "remplirpdf": {
+      "type": "http",
+      "url": "https://remplirpdf.fr/api/mcp"
+    }
+  }
+}

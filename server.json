@@ -1,0 +1,25 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "fr.remplirpdf/mcp-server",
+  "title": "RemplirPDF",
+  "description": "French rental documents (leases, rent receipts, inventories) generated as filled PDFs by AI agents.",
+  "version": "1.1.0",
+  "websiteUrl": "https://remplirpdf.fr/mcp",
+  "repository": {
+    "url": "https://github.com/benjammartin/remplirpdf-mcp",
+    "source": "github"
+  },
+  "icons": [
+    {
+      "src": "https://remplirpdf.fr/icon.svg",
+      "mimeType": "image/svg+xml",
+      "sizes": ["any"]
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://remplirpdf.fr/api/mcp"
+    }
+  ]
+}
