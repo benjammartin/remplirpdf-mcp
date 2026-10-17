@@ -16,7 +16,8 @@
     "build": "tsc",
     "start": "node dist/index.js",
     "sync-tools": "node scripts/sync-tools.mjs",
-    "test": "node scripts/smoke.mjs"
+    "test": "node scripts/smoke.mjs",
+    "interop": "node scripts/sdk-interop.mjs"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "1.31.0"

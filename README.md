@@ -16,7 +16,7 @@ account, with the legal clauses already written.
 
 | Tool | What it does | Behaviour |
 |---|---|---|
-| `list_templates` | Lists the 20 rental templates (slug, category, signers). Call it first. | read-only |
+| `list_templates` | Lists the rental templates of the RemplirPDF catalogue (slug, category, signers). Call it first. | read-only |
 | `get_template` | Fields of a template: required or not, expected format, options, computed fields, signers. Call it before generating. | read-only |
 | `generate_document` | Fills a template with the values the user gave, saves the PDF in their account, returns a 24-hour download link. With `document_id` it replaces an earlier document made from the same template. | writes (may overwrite) |
 | `list_documents` | The latest rental documents of the account. | read-only |
@@ -93,7 +93,9 @@ REMPLIRPDF_API_KEY=rpdf_your_key node dist/index.js
 | `REMPLIRPDF_MCP_URL` | `https://remplirpdf.fr/api/mcp` | Endpoint the tools are sent to. |
 
 Maintenance: `npm run sync-tools` regenerates `src/tools.json` from the live server (`REMPLIRPDF_API_KEY` set:
-`tools/list`; otherwise the public card `/.well-known/mcp/server-card.json`); `npm test` runs a stdio smoke test.
+`tools/list`; otherwise the public card `/.well-known/mcp/server-card.json`); `npm test` runs a stdio smoke test;
+`npm run interop -- https://remplirpdf.fr` checks the remote OAuth flow and tools with the official MCP SDK client
+(it creates a throwaway RemplirPDF account).
 
 ## Security and privacy
 

@@ -31,7 +31,7 @@ const tl = await send("tools/list", {});
 const tools = tl.result?.tools ?? [];
 check("tools/list → 5 tools with annotations and output schemas", tools.length === 5 && tools.every((t) => t.annotations && t.outputSchema), tools.map((t) => t.name).join(","));
 const r = await send("tools/call", { name: "list_templates", arguments: {} });
-if (process.env.REMPLIRPDF_API_KEY) check("list_templates through the API → 20 templates", r.result?.structuredContent?.templates?.length === 20, JSON.stringify(r).slice(0, 200));
+if (process.env.REMPLIRPDF_API_KEY) check("list_templates through the API → the catalogue templates", r.result?.structuredContent?.templates?.length > 0, JSON.stringify(r).slice(0, 200));
 else check("without REMPLIRPDF_API_KEY → explains how to set it", r.result?.isError && /REMPLIRPDF_API_KEY/.test(r.result.content?.[0]?.text ?? ""));
 child.kill();
 console.log(failures ? `${failures} failed` : "all passed");
