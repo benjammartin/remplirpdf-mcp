@@ -1,5 +1,6 @@
 {
   "name": "remplirpdf-mcp",
+  "mcpName": "fr.remplirpdf/mcp-server",
   "version": "1.1.0",
   "description": "MCP server for RemplirPDF: French rental documents (leases, rent receipts, inventories) generated as filled PDFs by AI agents.",
   "license": "MIT",
@@ -7,13 +8,14 @@
   "homepage": "https://remplirpdf.fr/mcp",
   "repository": { "type": "git", "url": "git+https://github.com/benjammartin/remplirpdf-mcp.git" },
   "bugs": { "email": "contact@remplirpdf.fr" },
-  "keywords": ["mcp", "model-context-protocol", "pdf", "lease", "rent-receipt", "real-estate", "france"],
+  "keywords": ["mcp", "mcp-server", "model-context-protocol", "ai-agent", "pdf", "pdf-form", "lease", "rent-receipt", "real-estate", "france", "bail", "quittance-de-loyer", "etat-des-lieux"],
   "type": "module",
   "bin": { "remplirpdf-mcp": "dist/index.js" },
   "files": ["dist", "README.md", "LICENSE"],
   "engines": { "node": ">=20" },
   "scripts": {
     "build": "tsc",
+    "prepublishOnly": "npm run build && npm test",
     "start": "node dist/index.js",
     "sync-tools": "node scripts/sync-tools.mjs",
     "test": "node scripts/smoke.mjs",

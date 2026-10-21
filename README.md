@@ -1,5 +1,7 @@
 # RemplirPDF MCP server
 
+[![npm](https://img.shields.io/npm/v/remplirpdf-mcp)](https://www.npmjs.com/package/remplirpdf-mcp)
+
 Let your AI agent prepare **French rental documents**: furnished and unfurnished leases, inventories (état des lieux),
 rent receipts (quittances), rent notices, guarantor deeds, notices to quit and certificates. The agent picks the right
 template, asks you for the missing details, and generates the filled PDF in your [RemplirPDF](https://remplirpdf.fr)
@@ -64,6 +66,25 @@ bearer_token_env_var = "REMPLIRPDF_API_KEY"
 
 For clients that only speak stdio. It exposes exactly the remote tools (their definitions are generated from the live
 server into [`src/tools.json`](src/tools.json)) and runs them through RemplirPDF's HTTPS API with your API key.
+
+```bash
+# npm (Node.js 20+), nothing to install
+REMPLIRPDF_API_KEY=rpdf_your_key npx -y remplirpdf-mcp
+```
+
+```json
+{
+  "mcpServers": {
+    "remplirpdf": {
+      "command": "npx",
+      "args": ["-y", "remplirpdf-mcp"],
+      "env": { "REMPLIRPDF_API_KEY": "rpdf_your_key" }
+    }
+  }
+}
+```
+
+Or run it from this repository:
 
 ```bash
 # Docker
