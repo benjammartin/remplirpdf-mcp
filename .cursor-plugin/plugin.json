@@ -1,0 +1,16 @@
+{
+  "name": "remplirpdf",
+  "displayName": "RemplirPDF",
+  "version": "1.1.0",
+  "description": "French rental documents for AI agents: leases, inventories (état des lieux), rent receipts and notices, generated as filled PDFs with the legal clauses already written.",
+  "author": {
+    "name": "RemplirPDF",
+    "email": "contact@remplirpdf.fr",
+    "url": "https://remplirpdf.fr"
+  },
+  "homepage": "https://remplirpdf.fr/mcp",
+  "repository": "https://github.com/benjammartin/remplirpdf-mcp",
+  "license": "MIT",
+  "logo": "https://remplirpdf.fr/icon.svg",
+  "keywords": ["mcp", "pdf", "france", "real-estate", "lease", "rent-receipt", "landlord", "bail", "quittance-de-loyer", "etat-des-lieux"]
+}
